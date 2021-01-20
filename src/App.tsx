@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import * as Tone from "tone";
+import Picker from "./Picker";
+import { transform } from "./transform";
 
 function App() {
+  const [pick, setpick] = useState(Array(16).fill("C4"));
+
+  const update = (newValue: string, i: number) => {
+    setpick([...pick.slice(0, i), newValue, ...pick.slice(i + 1)]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div>
+        <button
+          onClick={() => {
+            console.log(pick);
+            console.log(transform(pick));
+            const synth = new Tone.AMSynth().toDestination();
+            Tone.Transport.bpm.value = 100;
+
+            transform(pick).forEach((note) => {
+              synth.triggerAttackRelease(note.pitch, `0:0:${note.value}`, `+0:0:${note.start}`);
+            });
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          play
+        </button>
+      </div>
+
+      {pick.map((value, idx) => (
+        <Picker
+          onDown={(newValue) => update(newValue, idx)}
+          onUp={(newValue) => update(newValue, idx)}
+          value={value}
+          key={idx}
+        />
+      ))}
     </div>
   );
 }

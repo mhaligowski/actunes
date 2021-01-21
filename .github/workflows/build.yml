@@ -27,7 +27,7 @@ jobs:
     - name: Checkout the pages branch
       run: git checkout gh-pages
     - run: git ls-files
-    - run: git ls-files | grep -Ev "^\." | grep -Ev "^CNAME$" | xargs rm -rvf && mv dist/* .
+    - run: git ls-files | grep -Ev "^\." | grep -Ev "^CNAME$" | xargs rm -rvf && mv build/* .
     - name: Push distribution
       uses: github-actions-x/commit@v2.6
       with:

@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import * as Tone from "tone";
 
 type PickerType = {
@@ -8,7 +7,7 @@ type PickerType = {
   order: number;
 };
 
-const Picker = ({ onUp, onDown, value, order }: PickerType) => {
+const Picker = ({ onUp, onDown, value }: PickerType) => {
   const goUp = () => {
     if (value === "x") {
       onUp("-");

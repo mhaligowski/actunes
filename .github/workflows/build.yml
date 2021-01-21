@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Build distribution
-      run: make clean dist
+      run: make clean build
     - name: Checkout the pages branch
       run: git checkout gh-pages
     - run: git ls-files

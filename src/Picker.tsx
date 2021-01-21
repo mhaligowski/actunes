@@ -1,12 +1,14 @@
+import clsx from "clsx";
 import * as Tone from "tone";
 
 type PickerType = {
   onUp: (newValue: string) => void;
   onDown: (newValue: string) => void;
   value: string;
+  order: number;
 };
 
-const Picker = ({ onUp, onDown, value }: PickerType) => {
+const Picker = ({ onUp, onDown, value, order }: PickerType) => {
   const goUp = () => {
     if (value === "x") {
       onUp("-");
@@ -37,14 +39,19 @@ const Picker = ({ onUp, onDown, value }: PickerType) => {
 
   return (
     <div>
-      <button onClick={goUp} disabled={value === "E5"}>
-        up
-      </button>
+      <div className={"block"}>
+        <button onClick={goUp} disabled={value === "E5"}>
+          up
+        </button>
+      </div>
 
-      <div style={{ display: "inline" }}>{value}</div>
-      <button onClick={goDown} disabled={value === "x"}>
-        down
-      </button>
+      <div className={"block"}>{value}</div>
+
+      <div className={"block"}>
+        <button onClick={goDown} disabled={value === "x"}>
+          down
+        </button>
+      </div>
     </div>
   );
 };

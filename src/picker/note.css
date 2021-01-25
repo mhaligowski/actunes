@@ -1,0 +1,70 @@
+.Note {
+  position: relative;
+}
+
+.Note .name {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: 100%;
+}
+.Note.rest .name {
+  background-image: url("rest.png");
+}
+
+.Note.repeat .name {
+  background-image: url("./repeat.png");
+}
+
+.Note.low-g .name {
+  background-image: url("lowg.png");
+}
+
+.Note.low-a .name {
+  background-image: url("lowa.png");
+}
+
+.Note.low-b .name {
+  background-image: url("lowb.png");
+}
+
+.Note.low-c .name {
+  background-image: url("lowc.png");
+}
+
+.Note.low-d .name {
+  background-image: url("lowd.png");
+}
+
+
+.Note.low-e .name {
+  background-image: url("lowe.png");
+}
+
+.Note.low-f .name {
+  background-image: url("lowf.png");
+}
+
+.Note.hi-g .name {
+  background-image: url("hig.png");
+}
+
+.Note.hi-a .name {
+  background-image: url("hia.png");
+}
+
+.Note.hi-b .name {
+  background-image: url("hib.png");
+}
+
+.Note.hi-c .name {
+  background-image: url("hic.png");
+}
+
+.Note .name.hi-d {
+  background-image: url("hid.png");
+}
+
+.Note .name.hi-e {
+  background-image: url("hie.png");
+}

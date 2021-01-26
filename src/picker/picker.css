@@ -2,7 +2,6 @@ div.Picker {
   background-image: url("bg.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;;
 
   padding-top: 57%;
   position: relative;
@@ -10,10 +9,9 @@ div.Picker {
 
 div.Picker-inner {
   display: grid;
-  grid-template-columns: repeat(8, auto);
-  grid-template-rows: repeat(2, auto);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   
-  column-gap: 1rem;
   row-gap: 14%;
   
   padding-left: 12.5%;

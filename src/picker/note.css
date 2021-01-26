@@ -1,11 +1,12 @@
 .Note {
   position: relative;
+  display: grid;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
 }
 
 .Note .name {
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
   padding-top: 100%;
 }
 .Note.rest .name {
@@ -36,7 +37,6 @@
   background-image: url("lowd.png");
 }
 
-
 .Note.low-e .name {
   background-image: url("lowe.png");
 }
@@ -61,10 +61,10 @@
   background-image: url("hic.png");
 }
 
-.Note .name.hi-d {
+.Note.hi-d .name {
   background-image: url("hid.png");
 }
 
-.Note .name.hi-e {
+.Note.hi-e .name {
   background-image: url("hie.png");
 }

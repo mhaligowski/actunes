@@ -7,27 +7,27 @@ import "minireset.css/minireset.sass";
 import "./App.css";
 
 function App() {
-  const init = Array(16).fill("E4");
+  // const init = Array(16).fill("E4");
 
   // ALL
-  // const init = [
-  //   "-",
-  //   "x",
-  //   "G3",
-  //   "A3",
-  //   "B3",
-  //   "C4",
-  //   "D4",
-  //   "E4",
-  //   "F4",
-  //   "G4",
-  //   "A4",
-  //   "B4",
-  //   "C5",
-  //   "D5",
-  //   "E5",
-  //   "-",
-  // ];
+  const init = [
+    "E5",
+    "E5",
+    "D5",
+    "C5",
+    "B4",
+    "A4",
+    "G4",
+    "F4",
+    "E4",
+    "D4",
+    "C4",
+    "B3",
+    "A3",
+    "G3",
+    "-",
+    "x",
+  ];
 
   // const init = [
   //   "-",
@@ -62,13 +62,21 @@ function App() {
       <div>
         <button
           onClick={() => {
-            const synth = new Tone.AMSynth().toDestination();
+            const synth = new Tone.AMSynth({
+              envelope: {
+                attack: 0.09,
+                decay: 0.0795,
+                release: 0.2,
+                releaseCurve: "step",
+              },
+            }).toDestination();
             Tone.Transport.bpm.value = 100;
 
+            const durationMultiplier = 0.8;
             transform(pick).forEach((note) => {
               synth.triggerAttackRelease(
                 note.pitch,
-                `0:0:${note.value}`,
+                `0:0:${note.value * durationMultiplier}`,
                 `+0:0:${note.start}`
               );
             });

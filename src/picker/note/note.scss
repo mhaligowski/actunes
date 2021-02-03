@@ -1,0 +1,194 @@
+.Note {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  width: 98px;
+  height: 86px;
+}
+
+@for $col from 1 through 8 {
+  .Note:nth-child(#{$col}),
+  .Note:nth-child(#{$col + 8}) {
+    left: 121px + 98 * ($col - 1) + 12.75 * ($col - 1);
+  }
+
+  .Note.rest:nth-child(#{$col}) {
+    top: 254px;
+  }
+
+  .Note.rest:nth-child(#{$col + 8}) {
+    top: 431px;
+  }
+
+  .Note.repeat:nth-child(#{$col}) {
+    top: 247px;
+  }
+
+  .Note.repeat:nth-child(#{$col + 8}) {
+    top: 423px;
+  }
+
+  .Note.low-g:nth-child(#{$col}) {
+    top: 240px;
+  }
+
+  .Note.low-g:nth-child(#{$col + 8}) {
+    top: 418px;
+  }
+
+  .Note.low-a:nth-child(#{$col}) {
+    top: 236px;
+  }
+
+  .Note.low-a:nth-child(#{$col + 8}) {
+    top: 413px;
+  }
+
+  .Note.low-b:nth-child(#{$col}) {
+    top: 231px;
+  }
+  .Note.low-b:nth-child(#{$col + 8}) {
+    top: 409px;
+  }
+
+  .Note.low-c:nth-child(#{$col}) {
+    top: 226px;
+  }
+
+  .Note.low-c:nth-child(#{$col + 8}) {
+    top: 404px;
+  }
+
+  .Note.low-d:nth-child(#{$col}) {
+    top: 222px;
+  }
+
+  .Note.low-d:nth-child(#{$col + 8}) {
+    top: 398px;
+  }
+
+  .Note.low-e:nth-child(#{$col}) {
+    top: 217px;
+  }
+
+  .Note.low-e:nth-child(#{$col + 8}) {
+    top: 394px;
+  }
+
+  .Note.low-f:nth-child(#{$col}) {
+    top: 214px;
+  }
+
+  .Note.low-f:nth-child(#{$col + 8}) {
+    top: 388px;
+  }
+
+  .Note.hi-g:nth-child(#{$col}) {
+    top: 209px;
+  }
+
+  .Note.hi-g:nth-child(#{$col + 8}) {
+    top: 384px;
+  }
+
+  .Note.hi-a:nth-child(#{$col}) {
+    top: 205px;
+  }
+
+  .Note.hi-a:nth-child(#{$col + 8}) {
+    top: 380px;
+  }
+
+  .Note.hi-b:nth-child(#{$col}) {
+    top: 200px;
+  }
+
+  .Note.hi-b:nth-child(#{$col + 8}) {
+    top: 375px;
+  }
+
+  .Note.hi-c:nth-child(#{$col}) {
+    top: 195px;
+  }
+
+  .Note.hi-c:nth-child(#{$col + 8}) {
+    top: 370px;
+  }
+
+  .Note.hi-d:nth-child(#{$col}) {
+    top: 190px;
+  }
+
+  .Note.hi-d:nth-child(#{$col + 8}) {
+    top: 365px;
+  }
+
+  .Note.hi-e:nth-child(#{$col + 8}) {
+    top: 360px;
+  }
+
+  .Note.hi-e:nth-child(#{$col}) {
+    top: 186px;
+  }
+}
+
+.Note.rest {
+  background-image: url("rest.png");
+}
+
+.Note.repeat {
+  background-image: url("./repeat.png");
+}
+
+.Note.low-g {
+  background-image: url("lowg.png");
+}
+
+.Note.low-a {
+  background-image: url("lowa.png");
+}
+
+.Note.low-b {
+  background-image: url("lowb.png");
+}
+
+.Note.low-c {
+  background-image: url("lowc.png");
+}
+
+.Note.low-d {
+  background-image: url("lowd.png");
+}
+
+.Note.low-e {
+  background-image: url("lowe.png");
+}
+
+.Note.low-f {
+  background-image: url("lowf.png");
+}
+
+.Note.hi-g {
+  background-image: url("hig.png");
+}
+
+.Note.hi-a {
+  background-image: url("hia.png");
+}
+
+.Note.hi-b {
+  background-image: url("hib.png");
+}
+
+.Note.hi-c {
+  background-image: url("hic.png");
+}
+
+.Note.hi-d {
+  background-image: url("hid.png");
+}
+
+.Note.hi-e {
+  background-image: url("hie.png");
+}

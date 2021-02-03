@@ -1,6 +1,8 @@
 import React from "react";
-import Note from "./Note";
+import Note from "./note/Note";
+
 import "./picker.css";
+import "./picker.mobile.css";
 
 type PickerProps = {
   notes: string[];

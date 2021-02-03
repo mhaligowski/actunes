@@ -1,10 +1,12 @@
 import clsx from "clsx";
+import React from "react";
 import * as Tone from "tone";
-import "./note.css";
+import Arrow from "../arrow/Arrow";
+import "./note.scss";
 
 const CLASSMAP: { [name: string]: string } = {
-  "-": "rest",
-  x: "repeat",
+  "-": "repeat",
+  x: "rest",
   G3: "low-g",
   A3: "low-a",
   B3: "low-b",
@@ -32,7 +34,8 @@ const Note = ({ onUp, onDown, value }: NoteProps) => {
     if (value === "x") {
       onUp("-");
     } else if (value === "-") {
-      onUp("G4");
+      onUp("G3");
+    } else if (value === "E5") {
     } else {
       let newValue = Tone.Frequency(value);
       do {
@@ -47,6 +50,7 @@ const Note = ({ onUp, onDown, value }: NoteProps) => {
       onDown("-");
     } else if (value === "-") {
       onDown("x");
+    } else if (value === "x") {
     } else {
       let newValue = Tone.Frequency(value);
       do {
@@ -59,19 +63,8 @@ const Note = ({ onUp, onDown, value }: NoteProps) => {
   const noteClassName: string = CLASSMAP[value];
   return (
     <div className={clsx("Note", noteClassName)} data-name={value}>
-      <div className={clsx("up")}>
-        <button onClick={goUp} disabled={value === "E5"}>
-          up
-        </button>
-      </div>
-
-      <div className={clsx("name")} />
-
-      <div className={"down"}>
-        <button onClick={goDown} disabled={value === "x"}>
-          down
-        </button>
-      </div>
+      <Arrow onClick={goUp} direction={"up"} />
+      <Arrow onClick={goDown} direction={"down"} />
     </div>
   );
 };

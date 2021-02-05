@@ -1,16 +1,17 @@
 import React from "react";
+import { Melody } from "../transform";
 import Note from "./note/Note";
 
 import "./picker.css";
 import "./picker.mobile.css";
 
 type PickerProps = {
-  notes: string[];
+  melody: Melody;
   onChange: (idx: number, newValue: string) => void;
 };
 
-export default function Picker({ notes, onChange }: PickerProps) {
-  const pickersCells = notes.map((value, idx) => (
+export default function Picker({ melody, onChange }: PickerProps) {
+  const pickersCells = melody.map((value, idx) => (
     <Note
       onDown={(newValue: string) => onChange(idx, newValue)}
       onUp={(newValue: string) => onChange(idx, newValue)}

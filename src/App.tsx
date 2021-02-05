@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import * as Tone from "tone";
-import { transform } from "./transform";
+import { Melody } from "./transform";
 import Picker from "./picker/Picker";
 
 import "minireset.css/minireset.sass";
 import "./App.css";
+import usePlayer from "./usePlayer";
 
 function App() {
   // const init = Array(16).fill("E4");
 
   // ALL
-  const init = [
+  const init: Melody = [
     "E5",
     "E5",
     "D5",
@@ -47,42 +47,30 @@ function App() {
   //   "D4",
   //   "E4",
   // ];
-  const [pick, setpick] = useState(init);
+  const [pick, setpick] = useState<Melody>(init);
 
   const update = (idx: number, newValue: string) => {
-    setpick([...pick.slice(0, idx), newValue, ...pick.slice(idx + 1)]);
+    setpick([
+      ...pick.slice(0, idx),
+      newValue,
+      ...pick.slice(idx + 1),
+    ] as Melody);
   };
+
+  const player = usePlayer();
 
   return (
     <div className="App">
       <h1>Animal Crossing Tunes Studio</h1>
       <section className="picker">
-        <Picker onChange={update} notes={pick} />
+        <Picker onChange={update} melody={pick} />
       </section>
       <div>
-        <button
-          onClick={() => {
-            const synth = new Tone.AMSynth({
-              envelope: {
-                attack: 0.09,
-                decay: 0.0795,
-                release: 0.2,
-                releaseCurve: "step",
-              },
-            }).toDestination();
-            Tone.Transport.bpm.value = 100;
-
-            const durationMultiplier = 0.8;
-            transform(pick).forEach((note) => {
-              synth.triggerAttackRelease(
-                note.pitch,
-                `0:0:${note.value * durationMultiplier}`,
-                `+0:0:${note.start}`
-              );
-            });
-          }}
-        >
+        <button onClick={() => player.play(pick)} disabled={player.isPlaying()}>
           play
+        </button>
+        <button onClick={() => player.stop()} disabled={!player.isPlaying()}>
+          stop
         </button>
       </div>
     </div>

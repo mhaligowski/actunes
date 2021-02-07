@@ -19,18 +19,7 @@ button.Arrow.up {
   right: -5px;
 }
 
-button.Arrow img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: scale-down;
-}
-
 button.Arrow.down {
   left: -5px;
   bottom: -15px;
-}
-button.Arrow.down img {
-  transform: rotate(180deg);
 }

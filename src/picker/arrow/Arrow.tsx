@@ -19,7 +19,7 @@ export default function Arrow({
       onClick={onClick}
       disabled={disabled}
     >
-      <img src="/arrow.svg" alt="arrow" />
+      <i className={clsx("fas", `fa-angle-double-${direction}`)}></i>
     </button>
   );
 }

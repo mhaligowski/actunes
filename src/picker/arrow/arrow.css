@@ -1,13 +1,22 @@
 button.Arrow {
-  background: none !important;
-  border: none;
-  padding: 0 !important;
+  border-color: #f9ae11;
+  border-width: 4px;
+  border-radius: 100%;
+  border-style: solid;
+  padding: 2px !important;
+  background-color: #f1f5bfff;
+  background-size: 100%;
   position: absolute;
+  cursor: pointer;
+}
+
+button.Arrow:disabled {
+  display: none;
 }
 
 button.Arrow.up {
-  top: 0;
-  right: 0;
+  top: -20px;
+  right: -5px;
 }
 
 button.Arrow img {
@@ -19,8 +28,8 @@ button.Arrow img {
 }
 
 button.Arrow.down {
-  left: 0;
-  bottom: 0;
+  left: -5px;
+  bottom: -15px;
 }
 button.Arrow.down img {
   transform: rotate(180deg);

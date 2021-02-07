@@ -5,8 +5,8 @@ import Arrow from "../arrow/Arrow";
 import "./note.scss";
 
 const CLASSMAP: { [name: string]: string } = {
-  "-": "repeat",
   x: "rest",
+  "-": "repeat",
   G3: "low-g",
   A3: "low-a",
   B3: "low-b",
@@ -63,8 +63,8 @@ const Note = ({ onUp, onDown, value }: NoteProps) => {
   const noteClassName: string = CLASSMAP[value];
   return (
     <div className={clsx("Note", noteClassName)} data-name={value}>
-      <Arrow onClick={goUp} direction={"up"} />
-      <Arrow onClick={goDown} direction={"down"} />
+      <Arrow onClick={goUp} direction={"up"} disabled={value === "E5"} />
+      <Arrow onClick={goDown} direction={"down"} disabled={value === "x"} />
     </div>
   );
 };

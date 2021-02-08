@@ -1,0 +1,31 @@
+div.Picker {
+  background-image: url("bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+div.Picker-inner {
+  position: relative;
+  height: 100%;
+}
+
+/* Laptop */
+@media only screen and (min-device-width: 1200px) {
+  div.Picker {
+    height: 638px;
+    width: 1116px;
+  }
+}
+
+/* Mobile */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1199px){
+  div.Picker {
+    width: 609px;
+    height: 348px;
+  }
+}
+

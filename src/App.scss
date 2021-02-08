@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+/* Mobile */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1199px) {
+  .App {
+    .logo {
+      display: none;
+    }
+
+    section.player button:nth-child(1) {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+
+    section.player button:nth-child(2) {
+      position: absolute;
+      right: 20px;
+      top: 60px;
+    }
+  }
+}
+
+section.picker {
+  margin: 1rem auto;
+}

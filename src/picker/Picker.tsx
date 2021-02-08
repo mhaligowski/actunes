@@ -2,8 +2,7 @@ import React from "react";
 import { Melody } from "../transform";
 import Note from "./note/Note";
 
-import "./picker.css";
-import "./picker.mobile.css";
+import "./picker.scss";
 
 type PickerProps = {
   melody: Melody;

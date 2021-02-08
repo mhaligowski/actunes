@@ -50,7 +50,9 @@ export function transform(values: Melody): Sound[] {
     if (values[i] === "x") {
       currentTime += 2;
     } else if (values[i] === "-") {
-      result[result.length - 1].value += 2;
+      if (result.length > 0) {
+        result[result.length - 1].value += 2;
+      }
       currentTime += 2;
     } else {
       result.push({

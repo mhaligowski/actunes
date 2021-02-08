@@ -1,25 +1,27 @@
-import clsx from "clsx";
 import React from "react";
+
+import clsx from "clsx";
 import * as Tone from "tone";
 import Arrow from "../arrow/Arrow";
+
 import "./note.scss";
 
 const CLASSMAP: { [name: string]: string } = {
-  x: "rest",
-  "-": "repeat",
-  G3: "low-g",
-  A3: "low-a",
-  B3: "low-b",
-  C4: "low-c",
-  D4: "low-d",
-  E4: "low-e",
-  F4: "low-f",
-  G4: "hi-g",
-  A4: "hi-a",
-  B4: "hi-b",
-  C5: "hi-c",
-  D5: "hi-d",
-  E5: "hi-e",
+  x: "x",
+  "-": "r",
+  G3: "g",
+  A3: "a",
+  B3: "b",
+  C4: "c",
+  D4: "d",
+  E4: "e",
+  F4: "f",
+  G4: "G",
+  A4: "A",
+  B4: "B",
+  C5: "C",
+  D5: "D",
+  E5: "E",
 };
 
 type NoteProps = {

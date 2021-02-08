@@ -3,192 +3,335 @@
   background-size: contain;
   background-position: center;
   position: absolute;
-  width: 98px;
-  height: 86px;
-}
 
-@for $col from 1 through 8 {
-  .Note:nth-child(#{$col}),
-  .Note:nth-child(#{$col + 8}) {
-    left: 121px + 98 * ($col - 1) + 12.75 * ($col - 1);
+  &.x {
+    background-image: url("rest.png");
   }
 
-  .Note.rest:nth-child(#{$col}) {
-    top: 254px;
+  &.r {
+    background-image: url("./repeat.png");
   }
 
-  .Note.rest:nth-child(#{$col + 8}) {
-    top: 431px;
+  &.g {
+    background-image: url("lowg.png");
   }
 
-  .Note.repeat:nth-child(#{$col}) {
-    top: 247px;
+  &.a {
+    background-image: url("lowa.png");
   }
 
-  .Note.repeat:nth-child(#{$col + 8}) {
-    top: 423px;
+  &.b {
+    background-image: url("lowb.png");
   }
 
-  .Note.low-g:nth-child(#{$col}) {
-    top: 240px;
+  &.c {
+    background-image: url("lowc.png");
   }
 
-  .Note.low-g:nth-child(#{$col + 8}) {
-    top: 418px;
+  &.d {
+    background-image: url("lowd.png");
   }
 
-  .Note.low-a:nth-child(#{$col}) {
-    top: 236px;
+  &.e {
+    background-image: url("lowe.png");
   }
 
-  .Note.low-a:nth-child(#{$col + 8}) {
-    top: 413px;
+  &.f {
+    background-image: url("lowf.png");
   }
 
-  .Note.low-b:nth-child(#{$col}) {
-    top: 231px;
-  }
-  .Note.low-b:nth-child(#{$col + 8}) {
-    top: 409px;
+  &.G {
+    background-image: url("hig.png");
   }
 
-  .Note.low-c:nth-child(#{$col}) {
-    top: 226px;
+  &.A {
+    background-image: url("hia.png");
   }
 
-  .Note.low-c:nth-child(#{$col + 8}) {
-    top: 404px;
+  &.B {
+    background-image: url("hib.png");
   }
 
-  .Note.low-d:nth-child(#{$col}) {
-    top: 222px;
+  &.C {
+    background-image: url("hic.png");
   }
 
-  .Note.low-d:nth-child(#{$col + 8}) {
-    top: 398px;
+  &.D {
+    background-image: url("hid.png");
   }
 
-  .Note.low-e:nth-child(#{$col}) {
-    top: 217px;
-  }
-
-  .Note.low-e:nth-child(#{$col + 8}) {
-    top: 394px;
-  }
-
-  .Note.low-f:nth-child(#{$col}) {
-    top: 214px;
-  }
-
-  .Note.low-f:nth-child(#{$col + 8}) {
-    top: 388px;
-  }
-
-  .Note.hi-g:nth-child(#{$col}) {
-    top: 209px;
-  }
-
-  .Note.hi-g:nth-child(#{$col + 8}) {
-    top: 384px;
-  }
-
-  .Note.hi-a:nth-child(#{$col}) {
-    top: 205px;
-  }
-
-  .Note.hi-a:nth-child(#{$col + 8}) {
-    top: 380px;
-  }
-
-  .Note.hi-b:nth-child(#{$col}) {
-    top: 200px;
-  }
-
-  .Note.hi-b:nth-child(#{$col + 8}) {
-    top: 375px;
-  }
-
-  .Note.hi-c:nth-child(#{$col}) {
-    top: 195px;
-  }
-
-  .Note.hi-c:nth-child(#{$col + 8}) {
-    top: 370px;
-  }
-
-  .Note.hi-d:nth-child(#{$col}) {
-    top: 190px;
-  }
-
-  .Note.hi-d:nth-child(#{$col + 8}) {
-    top: 365px;
-  }
-
-  .Note.hi-e:nth-child(#{$col + 8}) {
-    top: 360px;
-  }
-
-  .Note.hi-e:nth-child(#{$col}) {
-    top: 186px;
+  &.E {
+    background-image: url("hie.png");
   }
 }
 
-.Note.rest {
-  background-image: url("rest.png");
+/* Desktop */
+@media only screen and (min-device-width: 1200px) {
+  .Note {
+    width: 98px;
+    height: 86px;
+
+    @for $col from 1 through 8 {
+      &:nth-child(#{$col}),
+      &:nth-child(#{$col + 8}) {
+        left: 121px + 98 * ($col - 1) + 12.75 * ($col - 1);
+      }
+
+      &.x:nth-child(#{$col}) {
+        top: 254px;
+      }
+
+      &.x:nth-child(#{$col + 8}) {
+        top: 431px;
+      }
+
+      &.r:nth-child(#{$col}) {
+        top: 247px;
+      }
+
+      &.r:nth-child(#{$col + 8}) {
+        top: 423px;
+      }
+
+      &.g:nth-child(#{$col}) {
+        top: 240px;
+      }
+
+      &.g:nth-child(#{$col + 8}) {
+        top: 418px;
+      }
+
+      &.a:nth-child(#{$col}) {
+        top: 236px;
+      }
+
+      &.a:nth-child(#{$col + 8}) {
+        top: 413px;
+      }
+
+      &.b:nth-child(#{$col}) {
+        top: 231px;
+      }
+      &.b:nth-child(#{$col + 8}) {
+        top: 409px;
+      }
+
+      &.c:nth-child(#{$col}) {
+        top: 226px;
+      }
+
+      &.c:nth-child(#{$col + 8}) {
+        top: 404px;
+      }
+
+      &.d:nth-child(#{$col}) {
+        top: 222px;
+      }
+
+      &.d:nth-child(#{$col + 8}) {
+        top: 398px;
+      }
+
+      &.e:nth-child(#{$col}) {
+        top: 217px;
+      }
+
+      &.e:nth-child(#{$col + 8}) {
+        top: 394px;
+      }
+
+      &.f:nth-child(#{$col}) {
+        top: 214px;
+      }
+
+      &.f:nth-child(#{$col + 8}) {
+        top: 388px;
+      }
+
+      &.G:nth-child(#{$col}) {
+        top: 209px;
+      }
+
+      &.G:nth-child(#{$col + 8}) {
+        top: 384px;
+      }
+
+      &.A:nth-child(#{$col}) {
+        top: 205px;
+      }
+
+      &.A:nth-child(#{$col + 8}) {
+        top: 380px;
+      }
+
+      &.B:nth-child(#{$col}) {
+        top: 200px;
+      }
+
+      &.B:nth-child(#{$col + 8}) {
+        top: 375px;
+      }
+
+      &.C:nth-child(#{$col}) {
+        top: 195px;
+      }
+
+      &.C:nth-child(#{$col + 8}) {
+        top: 370px;
+      }
+
+      &.D:nth-child(#{$col}) {
+        top: 190px;
+      }
+
+      &.D:nth-child(#{$col + 8}) {
+        top: 365px;
+      }
+
+      &.E:nth-child(#{$col + 8}) {
+        top: 360px;
+      }
+
+      &.E:nth-child(#{$col}) {
+        top: 186px;
+      }
+    }
+  }
 }
 
-.Note.repeat {
-  background-image: url("./repeat.png");
-}
+@media only screen and (min-device-width: 320px) and (max-device-width: 1199px) {
+  $note-width: 54px;
+  $offset: 66px;
+  $spacing: 6.5px;
 
-.Note.low-g {
-  background-image: url("lowg.png");
-}
+  .Note {
+    width: $note-width;
+    height: 50px;
 
-.Note.low-a {
-  background-image: url("lowa.png");
-}
+    @for $col from 1 through 8 {
+      &:nth-child(#{$col}),
+      &:nth-child(#{$col + 8}) {
+        left: $offset + $note-width * ($col - 1) + $spacing * ($col - 1);
+      }
 
-.Note.low-b {
-  background-image: url("lowb.png");
-}
+      &.x:nth-child(#{$col}) {
+        top: 139px;
+      }
 
-.Note.low-c {
-  background-image: url("lowc.png");
-}
+      &.x:nth-child(#{$col + 8}) {
+        top: 431px;
+      }
 
-.Note.low-d {
-  background-image: url("lowd.png");
-}
+      &.r:nth-child(#{$col}) {
+        top: 133px;
+      }
 
-.Note.low-e {
-  background-image: url("lowe.png");
-}
+      &.r:nth-child(#{$col + 8}) {
+        top: 231px;
+      }
 
-.Note.low-f {
-  background-image: url("lowf.png");
-}
+      &.g:nth-child(#{$col}) {
+        top: 130px;
+      }
 
-.Note.hi-g {
-  background-image: url("hig.png");
-}
+      &.g:nth-child(#{$col + 8}) {
+        top: 228px;
+      }
 
-.Note.hi-a {
-  background-image: url("hia.png");
-}
+      &.a:nth-child(#{$col}) {
+        top: 127px;
+      }
 
-.Note.hi-b {
-  background-image: url("hib.png");
-}
+      &.a:nth-child(#{$col + 8}) {
+        top: 225px;
+      }
 
-.Note.hi-c {
-  background-image: url("hic.png");
-}
+      &.b:nth-child(#{$col}) {
+        top: 124px;
+      }
+      &.b:nth-child(#{$col + 8}) {
+        top: 222px;
+      }
 
-.Note.hi-d {
-  background-image: url("hid.png");
-}
+      &.c:nth-child(#{$col}) {
+        top: 121px;
+      }
 
-.Note.hi-e {
-  background-image: url("hie.png");
+      &.c:nth-child(#{$col + 8}) {
+        top: 219px;
+      }
+
+      &.d:nth-child(#{$col}) {
+        top: 119px;
+      }
+
+      &.d:nth-child(#{$col + 8}) {
+        top: 216px;
+      }
+
+      &.e:nth-child(#{$col}) {
+        top: 117px;
+      }
+
+      &.e:nth-child(#{$col + 8}) {
+        top: 213px;
+      }
+
+      &.f:nth-child(#{$col}) {
+        top: 112px;
+      }
+
+      &.f:nth-child(#{$col + 8}) {
+        top: 210px;
+      }
+
+      &.G:nth-child(#{$col}) {
+        top: 109px;
+      }
+
+      &.G:nth-child(#{$col + 8}) {
+        top: 207px;
+      }
+
+      &.A:nth-child(#{$col}) {
+        top: 112px;
+      }
+
+      &.A:nth-child(#{$col + 8}) {
+        top: 204px;
+      }
+
+      &.B:nth-child(#{$col}) {
+        top: 109px;
+      }
+
+      &.B:nth-child(#{$col + 8}) {
+        top: 201px;
+      }
+
+      &.C:nth-child(#{$col}) {
+        top: 106px;
+      }
+
+      &.C:nth-child(#{$col + 8}) {
+        top: 198px;
+      }
+
+      &.D:nth-child(#{$col}) {
+        top: 103px;
+      }
+
+      &.D:nth-child(#{$col + 8}) {
+        top: 195px;
+      }
+
+      &.E:nth-child(#{$col}) {
+        top: 101px;
+      }
+
+      &.E:nth-child(#{$col + 8}) {
+        top: 192px;
+      }
+    }
+  }
 }

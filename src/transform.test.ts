@@ -1,7 +1,7 @@
-import { transform } from "./transform";
+import { Melody, transform } from "./transform";
 
 it("should return empty values when the input is empty", () => {
-  expect(transform([])).toEqual([]);
+  expect(transform([] as Melody)).toEqual([]);
 });
 
 it("should give a single note when single note is given", () => {
@@ -28,6 +28,10 @@ it("should honor the single rest", () => {
 
 it("should return nothing with a single rest", () => {
   expect(transform(["x"])).toEqual([]);
+});
+
+it("should return nothing with a single rest expanded", () => {
+  expect(transform(["x", '-'])).toEqual([]);
 });
 
 it("should move the start of the note", () => {

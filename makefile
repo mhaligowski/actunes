@@ -7,4 +7,4 @@ clean:
 	-rm -rf build
 
 build:
-	$(NPM) run $@
+	PUBLIC_URL=https://actunes.studio/ $(NPM) run $@

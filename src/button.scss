@@ -1,0 +1,15 @@
+.Button {
+  background-color: #f6f6df;
+  border: none;
+  border-radius: 1em;
+  padding: 0.5em 1.5em;
+  margin: 1em;
+
+  color: #8a7d6b;
+  font-weight: bolder;
+}
+
+.Button:disabled {
+  background-color: #06b4aa;
+  color: #f6f6df;
+}

@@ -7,6 +7,7 @@ import "./App.scss";
 import usePlayer from "./usePlayer";
 import { useEffect } from "react";
 import { deserialize } from "./serialize";
+import { Button } from "./Button";
 
 function App() {
   // const init: Melody = Array(16).fill("x") as Melody;
@@ -78,15 +79,15 @@ function App() {
 
       <section className="player">
         <div>
-          <button
+          <Button
             onClick={() => player.play(pick)}
             disabled={player.isPlaying()}
           >
-            play
-          </button>
-          <button onClick={() => player.stop()} disabled={!player.isPlaying()}>
-            stop
-          </button>
+            Play
+          </Button>
+          <Button onClick={() => player.stop()} disabled={!player.isPlaying()}>
+            Stop
+          </Button>
         </div>
       </section>
     </div>

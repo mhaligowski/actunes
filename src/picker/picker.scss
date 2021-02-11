@@ -22,10 +22,9 @@ div.Picker-inner {
 }
 
 /* Mobile */
-@media only screen and (min-device-width: 320px) and (max-device-width: 1199px){
+@media only screen and (min-device-width: 320px) and (max-device-width: 1199px) {
   div.Picker {
     width: 609px;
     height: 348px;
   }
 }
-

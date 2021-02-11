@@ -5,6 +5,8 @@ import Picker from "./picker/Picker";
 import "minireset.css/minireset.sass";
 import "./App.scss";
 import usePlayer from "./usePlayer";
+import { useEffect } from "react";
+import { deserialize } from "./serialize";
 
 function App() {
   // const init: Melody = Array(16).fill("x") as Melody;
@@ -48,6 +50,16 @@ function App() {
     "E5",
   ];
   const [pick, setpick] = useState<Melody>(init);
+  const player = usePlayer();
+
+  // On load parse the query string to see if it contains the serialized melody. No cleanup needed.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has("play")) {
+      const melody = deserialize(params.get("play")!);
+      if (melody) setpick(melody);
+    }
+  }, []);
 
   const update = (idx: number, newValue: string) => {
     setpick([
@@ -56,8 +68,6 @@ function App() {
       ...pick.slice(idx + 1),
     ] as Melody);
   };
-
-  const player = usePlayer();
 
   return (
     <div className="App">

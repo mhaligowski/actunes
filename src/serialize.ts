@@ -1,4 +1,4 @@
-import { Melody, Note } from "./transform";
+import { Melody } from "./transform";
 
 type SerializationMap = { [note: string]: string };
 

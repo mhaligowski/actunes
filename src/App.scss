@@ -26,3 +26,15 @@
 section.picker {
   margin: 1rem auto;
 }
+
+section.player {
+  .confirmation {
+    color: green;
+    font-size: smaller;
+    display:none;
+
+    &.visible {
+      display: block;
+    }
+  }
+}

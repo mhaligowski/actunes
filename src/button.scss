@@ -7,9 +7,15 @@
 
   color: #8a7d6b;
   font-weight: bolder;
+  cursor: pointer;
+}
+
+.Button:active {
+  background-color: #06b4aa;
 }
 
 .Button:disabled {
-  background-color: #06b4aa;
+  background-color: rgb(174, 174, 174);
   color: #f6f6df;
+  cursor: not-allowed;
 }

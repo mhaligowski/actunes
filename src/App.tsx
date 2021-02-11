@@ -6,8 +6,9 @@ import "minireset.css/minireset.sass";
 import "./App.scss";
 import usePlayer from "./usePlayer";
 import { useEffect } from "react";
-import { deserialize } from "./serialize";
+import { deserialize, serialize } from "./serialize";
 import { Button } from "./Button";
+import clsx from "clsx";
 
 function App() {
   // const init: Melody = Array(16).fill("x") as Melody;
@@ -51,6 +52,7 @@ function App() {
     "E5",
   ];
   const [pick, setpick] = useState<Melody>(init);
+  const [isCopied, setIsCopied] = useState(false);
   const player = usePlayer();
 
   // On load parse the query string to see if it contains the serialized melody. No cleanup needed.
@@ -83,11 +85,30 @@ function App() {
             onClick={() => player.play(pick)}
             disabled={player.isPlaying()}
           >
-            Play
+            <i className="fas fa-play"></i>&nbsp;Play
           </Button>
+
           <Button onClick={() => player.stop()} disabled={!player.isPlaying()}>
-            Stop
+            <i className="fas fa-stop"></i>&nbsp;Stop
           </Button>
+
+          <Button
+            onClick={() => {
+              const serialized = serialize(pick);
+              navigator.clipboard
+                .writeText(
+                  `${window.location.protocol}//${window.location.host}/?play=${serialized}`
+                )
+                .then(() => setIsCopied(true));
+            }}
+            disabled={false}
+          >
+            <i className="fas fa-share"></i>&nbsp;Share
+          </Button>
+
+          <div className={clsx({ confirmation: true, visible: isCopied })}>
+            <i className="fas fa-check"></i>&nbsp; Link copied to clipboard!
+          </div>
         </div>
       </section>
     </div>

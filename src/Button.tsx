@@ -1,9 +1,9 @@
 import "./button.scss";
 
 type ButtonProps = {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   disabled: boolean;
-  children: string;
+  children: React.ReactNode;
 };
 export function Button(props: ButtonProps) {
   return (

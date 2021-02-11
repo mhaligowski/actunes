@@ -29,7 +29,7 @@ const DESERIALMAP: SerializationMap = Object.keys(SERIALMAP).reduce(
 );
 
 const serialize = (melody: Melody): string =>
-  melody.map((n) => SERIALMAP[n]).join();
+  melody.map((n) => SERIALMAP[n]).join('');
 
 const deserialize = (melody: string): Melody | null => {
   if (melody.length === 16) {

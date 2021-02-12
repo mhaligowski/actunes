@@ -1,5 +1,21 @@
+@font-face {
+  font-family: "Fink Heavy";
+  font-style: normal;
+  font-weight: 400;
+  src: local(FinkHeavy),  url(./FinkHeavy.woff) format('woff');
+}
+
 .App {
   text-align: center;
+
+  .logo {
+    font-family: "Fink Heavy";
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(217, 234, 141);
+    padding: 0.25em 0em;
+    font-size: 3em;
+  }
 }
 
 /* Mobile */
@@ -31,7 +47,7 @@ section.player {
   .confirmation {
     color: green;
     font-size: smaller;
-    display:none;
+    display: none;
 
     &.visible {
       display: block;

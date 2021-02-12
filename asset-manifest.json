@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "https://actunes.studio/static/css/main.01330156.chunk.css",
+    "main.css": "https://actunes.studio/static/css/main.406112e8.chunk.css",
     "main.js": "https://actunes.studio/static/js/main.8b39b344.chunk.js",
     "main.js.map": "https://actunes.studio/static/js/main.8b39b344.chunk.js.map",
     "runtime-main.js": "https://actunes.studio/static/js/runtime-main.d9fa68db.js",
@@ -12,7 +12,7 @@
     "static/js/3.fef37824.chunk.js.map": "https://actunes.studio/static/js/3.fef37824.chunk.js.map",
     "index.html": "https://actunes.studio/index.html",
     "static/css/2.05d8330c.chunk.css.map": "https://actunes.studio/static/css/2.05d8330c.chunk.css.map",
-    "static/css/main.01330156.chunk.css.map": "https://actunes.studio/static/css/main.01330156.chunk.css.map",
+    "static/css/main.406112e8.chunk.css.map": "https://actunes.studio/static/css/main.406112e8.chunk.css.map",
     "static/js/2.f2499d91.chunk.js.LICENSE.txt": "https://actunes.studio/static/js/2.f2499d91.chunk.js.LICENSE.txt",
     "static/media/App.scss": "https://actunes.studio/static/media/FinkHeavy.8b825740.woff",
     "static/media/picker.scss": "https://actunes.studio/static/media/bg.2f32f318.png",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.d9fa68db.js",
     "static/css/2.05d8330c.chunk.css",
     "static/js/2.f2499d91.chunk.js",
-    "static/css/main.01330156.chunk.css",
+    "static/css/main.406112e8.chunk.css",
     "static/js/main.8b39b344.chunk.js"
   ]
 }

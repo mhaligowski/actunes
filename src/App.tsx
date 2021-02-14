@@ -75,6 +75,15 @@ function App() {
   return (
     <div className="App">
       <h1 className="logo">Animal Crossing Tunes Studio</h1>
+      <section className="social-media">
+        <a
+          href="https://twitter.com/actunesstudio"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fab fa-twitter"></i>
+        </a>
+      </section>
       <section className="picker">
         <Picker onChange={update} melody={pick} />
       </section>

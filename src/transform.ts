@@ -1,7 +1,7 @@
 export type Sound = {
-  pitch: string;
-  start: number; // in 16ths
-  value: number; // in 16ths
+  note: string;
+  time: number; // in 16ths
+  duration: number; // in 16ths
 };
 
 export type Note =
@@ -51,14 +51,14 @@ export function transform(values: Melody): Sound[] {
       currentTime += 2;
     } else if (values[i] === "-") {
       if (result.length > 0) {
-        result[result.length - 1].value += 2;
+        result[result.length - 1].duration += 2;
       }
       currentTime += 2;
     } else {
       result.push({
-        pitch: values[i],
-        start: currentTime,
-        value: 2,
+        note: values[i],
+        time: currentTime,
+        duration: 2,
       });
       currentTime += 2;
     }

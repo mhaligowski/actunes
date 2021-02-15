@@ -10,51 +10,55 @@ interface Player {
 
 export default function usePlayer(): Player {
   const [synth, setSynth] = useState<Tone.AMSynth>();
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
-    Tone.Transport.bpm.value = 100;
+    Tone.start();
+    Tone.Transport.bpm.value = 60;
+    Tone.Transport.stop();
+    const _synth = new Tone.AMSynth({
+      envelope: {
+        attack: 0.09,
+        decay: 0.0795,
+        release: 0.1,
+        releaseCurve: "step",
+      },
+    }).toDestination();
+    setSynth(_synth);
   }, []);
 
   return {
-    isPlaying: () => {
-      return !(synth == null);
-    },
+    isPlaying: () => isPlaying,
     play: (melody: Melody) => {
-      const _synth = new Tone.AMSynth({
-        envelope: {
-          attack: 0.09,
-          decay: 0.0795,
-          release: 0.2,
-          releaseCurve: "step",
-        },
-      }).toDestination();
+      Tone.start();
+      Tone.Transport.stop();
 
-      _synth.onsilence = (i) => {
-        i.disconnect();
-        i.dispose();
-        Tone.Transport.cancel();
+      Tone.Transport.scheduleOnce((t) => {
+        Tone.Transport.cancel(0);
         Tone.Transport.stop();
-        setSynth(undefined);
-      };
+        setIsPlaying(false);
+      }, "+0:0:32");
 
-      const durationMultiplier = 0.8;
-      transform(melody).forEach((note) => {
-        _synth.triggerAttackRelease(
-          note.pitch,
-          `0:0:${note.value * durationMultiplier}`,
-          `+0:0:${note.start}`
+      transform(melody)
+        .map((s) => {
+          return {
+            note: s.note,
+            duration: `0:0:${s.duration * 0.75}`,
+            time: `+0:0:${s.time}`,
+          };
+        })
+        .forEach((n) =>
+          Tone.Transport.scheduleOnce((t) => {
+            synth!.triggerAttackRelease(n.note, n.duration);
+          }, n.time)
         );
-      });
 
-      setSynth(_synth);
+      setIsPlaying(true);
+      Tone.Transport.start();
     },
     stop: () => {
-      synth!.disconnect();
-      synth!.dispose();
-
-      Tone.Transport.cancel();
       Tone.Transport.stop();
-      setSynth(undefined);
+      setIsPlaying(false);
     },
   };
 }

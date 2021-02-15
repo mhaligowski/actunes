@@ -11,28 +11,6 @@ import { Button } from "./Button";
 import clsx from "clsx";
 
 function App() {
-  // const init: Melody = Array(16).fill("x") as Melody;
-
-  // ALL
-  // const init: Melody = [
-  //   "E5",
-  //   "E5",
-  //   "D5",
-  //   "C5",
-  //   "B4",
-  //   "A4",
-  //   "G4",
-  //   "F4",
-  //   "E4",
-  //   "D4",
-  //   "C4",
-  //   "B3",
-  //   "A3",
-  //   "G3",
-  //   "-",
-  //   "x",
-  // ];
-
   const init: Melody = [
     "x",
     "-",
@@ -42,7 +20,7 @@ function App() {
     "C4",
     "D4",
     "E4",
-    "F4",
+    "x",
     "G4",
     "A4",
     "B4",

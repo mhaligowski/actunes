@@ -9,6 +9,27 @@ import { useEffect } from "react";
 import { deserialize, serialize } from "./serialize";
 import { Button } from "./components/Button";
 import clsx from "clsx";
+import { TextInput } from "./components/Input";
+import { ChangeEvent } from "react";
+
+function SearchSection() {
+  const [query, setQuery] = useState("");
+  return (
+    <section className="search Mobile-hidden Desktop-hidden">
+      <TextInput
+        size={60}
+        name="q"
+        placeholder="what tune are you looking for?"
+        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+          setQuery(e.target.value)
+        }
+      />
+      <Button onClick={() => console.log(query)}>
+        <i className="fas fa-search"></i>&nbsp;Search
+      </Button>
+    </section>
+  );
+}
 
 function App() {
   const init: Melody = [
@@ -68,6 +89,7 @@ function App() {
 
       <section className="player">
         <div>
+          {/* Play button. */}
           <Button
             onClick={() => player.play(pick)}
             disabled={player.isPlaying()}
@@ -76,6 +98,7 @@ function App() {
             <i className="fas fa-play"></i>&nbsp;Play
           </Button>
 
+          {/* Stop button. */}
           <Button
             onClick={() => player.stop()}
             disabled={!player.isPlaying()}
@@ -84,6 +107,7 @@ function App() {
             <i className="fas fa-stop"></i>&nbsp;Stop
           </Button>
 
+          {/* Sharing button. */}
           <Button
             onClick={() => {
               const serialized = serialize(pick);
@@ -98,11 +122,12 @@ function App() {
             <i className="fas fa-share"></i>&nbsp;Share
           </Button>
 
-          <div className={clsx({ confirmation: true, visible: isCopied })}>
+          <div className={clsx({ confirmation: true, hidden: !isCopied })}>
             <i className="fas fa-check"></i>&nbsp; Link copied to clipboard!
           </div>
         </div>
       </section>
+      <SearchSection />
     </div>
   );
 }

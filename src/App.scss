@@ -42,14 +42,24 @@ section.social-media {
     section.player button:nth-child(2) {
       position: absolute;
       right: 20px;
-      top: 60px;
+      top: 20px;
     }
 
     section.player button:nth-child(3) {
       position: absolute;
       right: 20px;
-      top: 100px;
+      top: 60px;
     }
+
+    .Mobile-hidden {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 1200px) {
+  .Desktop-hidden {
+    display: none;
   }
 }
 
@@ -61,10 +71,6 @@ section.player {
   .confirmation {
     color: green;
     font-size: smaller;
-    display: none;
-
-    &.visible {
-      display: block;
-    }
+    margin-bottom: 1em;
   }
 }

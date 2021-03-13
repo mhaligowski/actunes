@@ -3,13 +3,13 @@ import clsx from "clsx";
 
 type ButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  disabled: boolean;
+  disabled?: boolean;
   visible?: boolean;
   children: React.ReactNode;
 };
 export function Button({
   onClick,
-  disabled,
+  disabled = false,
   visible = true,
   children,
 }: ButtonProps) {

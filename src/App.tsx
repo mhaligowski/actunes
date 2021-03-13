@@ -7,7 +7,7 @@ import "./App.scss";
 import usePlayer from "./usePlayer";
 import { useEffect } from "react";
 import { deserialize, serialize } from "./serialize";
-import { Button } from "./Button";
+import { Button } from "./components/Button";
 import clsx from "clsx";
 
 function App() {
@@ -71,11 +71,16 @@ function App() {
           <Button
             onClick={() => player.play(pick)}
             disabled={player.isPlaying()}
+            visible={!player.isPlaying()}
           >
             <i className="fas fa-play"></i>&nbsp;Play
           </Button>
 
-          <Button onClick={() => player.stop()} disabled={!player.isPlaying()}>
+          <Button
+            onClick={() => player.stop()}
+            disabled={!player.isPlaying()}
+            visible={player.isPlaying()}
+          >
             <i className="fas fa-stop"></i>&nbsp;Stop
           </Button>
 

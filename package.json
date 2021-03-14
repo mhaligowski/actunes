@@ -102,6 +102,7 @@
   "devDependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "algoliasearch": "^4.8.6",
     "node-sass": "^4.14.1"
   },
   "jest": {

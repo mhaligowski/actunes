@@ -11,11 +11,20 @@ import { Button } from "./components/Button";
 import clsx from "clsx";
 import { TextInput } from "./components/Input";
 import { ChangeEvent } from "react";
+import { useSearch } from "./search";
 
 function SearchSection() {
   const [query, setQuery] = useState("");
+  const searchClient = useSearch();
+
   return (
-    <section className="search Mobile-hidden Desktop-hidden">
+    <section
+      className={clsx({
+        search: true,
+        "Mobile-hidden": process.env.NODE_ENV === "production",
+        "Desktop-hidden": process.env.NODE_ENV === "production",
+      })}
+    >
       <TextInput
         size={60}
         name="q"
@@ -24,7 +33,11 @@ function SearchSection() {
           setQuery(e.target.value)
         }
       />
-      <Button onClick={() => console.log(query)}>
+      <Button
+        onClick={() =>
+          searchClient(query).then(console.log).catch(console.error)
+        }
+      >
         <i className="fas fa-search"></i>&nbsp;Search
       </Button>
     </section>

@@ -9,40 +9,7 @@ import { useEffect } from "react";
 import { deserialize, serialize } from "./serialize";
 import { Button } from "./components/Button";
 import clsx from "clsx";
-import { TextInput } from "./components/Input";
-import { ChangeEvent } from "react";
-import { useSearch } from "./search";
-
-function SearchSection() {
-  const [query, setQuery] = useState("");
-  const searchClient = useSearch();
-
-  return (
-    <section
-      className={clsx({
-        search: true,
-        "Mobile-hidden": process.env.NODE_ENV === "production",
-        "Desktop-hidden": process.env.NODE_ENV === "production",
-      })}
-    >
-      <TextInput
-        size={60}
-        name="q"
-        placeholder="what tune are you looking for?"
-        onChange={(e: ChangeEvent<HTMLInputElement>) =>
-          setQuery(e.target.value)
-        }
-      />
-      <Button
-        onClick={() =>
-          searchClient(query).then(console.log).catch(console.error)
-        }
-      >
-        <i className="fas fa-search"></i>&nbsp;Search
-      </Button>
-    </section>
-  );
-}
+import { SearchSection } from "./sections/search";
 
 function App() {
   const init: Melody = [
@@ -140,6 +107,7 @@ function App() {
           </div>
         </div>
       </section>
+
       <SearchSection />
     </div>
   );
